@@ -22,10 +22,28 @@ struct ContentView: View {
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 
+                ScrollView(.vertical, showsIndicators: false, content: {
+                    VStack(spacing: 0) {
+                        
+                        FeaturedTabView()
+                            .padding(.vertical, 20)
+                        
+                        CategoryGridView()
+                        
+                        TitleView(title: "Helmets")
+                        
+                        LazyVGrid(columns: gridLayout, spacing: 15, content: {
+                            ForEach(products) {product in
+                                ProductItemView(product: product)
+                            }//: LOOP
+                        })//: GRID
+                        .padding(15)
+                        
+                        FooterView()
+                            .padding(.horizontal)
+                    }//: VSTACK
+                })//: SCROLL
                 Spacer()
-                
-                FooterView()
-                    .padding(.horizontal)
             }//: VSTACK
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
         }//: ZSTACK
