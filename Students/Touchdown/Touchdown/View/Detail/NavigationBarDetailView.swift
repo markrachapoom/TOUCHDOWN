@@ -10,11 +10,19 @@ import SwiftUI
 struct NavigationBarDetailView: View {
     // MARK: - PROPERTIES
     
+    @EnvironmentObject var shop: Shop
+    let impact = UIImpactFeedbackGenerator(style: .medium)
     
     // MARK: - BODY
     var body: some View {
         HStack {
-            Button(action: {}, label: {
+            Button(action: {
+                impact.impactOccurred()
+                withAnimation(.easeIn) {
+                    shop.showingProduct = false
+                    shop.selectedProduct = nil
+                }
+            }, label: {
                 Image(systemName: "chevron.left")
                     .font(.title)
                     .foregroundColor(.white)
@@ -36,5 +44,6 @@ struct NavigationBarDetailView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .padding()
             .background(Color.gray)
+            .environmentObject(Shop())
     }
 }

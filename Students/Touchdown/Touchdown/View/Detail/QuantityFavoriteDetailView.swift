@@ -11,11 +11,13 @@ struct QuantityFavoriteDetailView: View {
     // MARK: - PROPERTIES
     
     @State private var counter: Int = 0
+    let impact = UIImpactFeedbackGenerator(style: .medium)
     
     // MARK: - BODY
     var body: some View {
         HStack(alignment: .center, spacing: 6, content: {
             Button(action: {
+                impact.impactOccurred()
                 if counter >= 1 {
                     counter -= 1
                 }
@@ -28,6 +30,7 @@ struct QuantityFavoriteDetailView: View {
                 .frame(minWidth: 36)
             
             Button(action: {
+                impact.impactOccurred()
                 if counter < 100 {
                     counter += 1
                 }
