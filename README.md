@@ -7,11 +7,9 @@ Touchdown - iOS E-Commerce App project
 ![Alt Text](https://media.giphy.com/media/UcBpQ5APo74MQ9n98n/giphy.gif)
 
 Technologies that covered:
-- MapKit
-- AVKit
-- Mac Catalyst
-- Sticker Pack Extension
-- Works on iPhone, iPad and Mac
+
+- SwiftUI
+- LazyGrid
 
 SwiftUI MasterClass
 
