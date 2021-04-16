@@ -10,9 +10,3 @@ Technologies that covered:
 
 - SwiftUI
 - LazyGrid
-
-SwiftUI MasterClass
-
-Website: https://swiftuimasterclass.com
-
-Twitter: https://twitter.com/robertpetras
